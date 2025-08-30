@@ -3,36 +3,45 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Fecha nacimiento</th>
+                <th scope="col">Edad</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td>{{ nombre2[0] }}</td>
+                <td>{{ apellido2[0] }}</td>
+                <td>{{ fechaNacimiento2[0] }}</td>
+                <td>{{ edad2[0] }}</td>
             </tr>
             <tr>
                 <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
+                <td>{{ nombre2[1] }}</td>
+                <td>{{ apellido2[1] }}</td>
+                <td>{{ fechaNacimiento2[1] }}</td>
+                <td>{{ edad2[1] }}</td>
             </tr>
             <tr>
                 <th scope="row">3</th>
-                <td>John</td>
-                <td>Doe</td>
-                <td>@social</td>
+                <td>{{ nombre2[2] }}</td>
+                <td>{{ apellido2[2] }}</td>
+                <td>{{ fechaNacimiento2[2] }}</td>
+                <td>{{ edad2[2] }}</td>
             </tr>
         </tbody>
-        <button class="btn btn-outline-info">Ocultar</button>
+        <button v-if="visible" class="btn btn-outline-info">Ocultar</button>
     </table>
 </template>
 
 <script setup>
+    import { ref } from 'vue'
+    const nombre2 = ref(['León', 'Angela', 'Perico'])
+    const apellido2 = ref(['Pizarro', 'Gonzalez', 'Lopez'])
+    const fechaNacimiento2 = ref(['17-02-2012', '25-12-2010', '01-01-2000'])
+    const edad2 = ref([13, 15, 25])
 
 const props = defineProps({
     visible: {
