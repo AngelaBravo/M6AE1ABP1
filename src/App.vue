@@ -4,9 +4,12 @@ import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import Tabla from './components/Tabla.vue'
 
-const mostrarTabla = ref(false)
-function mostrarTablaFn() {
-  mostrarTabla.value = true
+const visible = ref(false)
+function mostrarTabla() {
+  visible.value = true
+}
+function ocultarTabla() {
+  visible.value = false
 }
 
 </script>
@@ -16,14 +19,15 @@ function mostrarTablaFn() {
     <img alt="Vue logo" class="logo" src="./assets/Favicon3.jpg" height="125" />
 
     <div class="wrapper">
-  <HelloWorld msg="M6AE1-ABP1" :mostrarTabla="mostrarTablaFn" />
+  <HelloWorld msg="M6AE1-ABP1" :mostrarTabla="mostrarTabla" />
     </div>
   </header>
 
   <main>
     <TheWelcome />
     <br>
-  <Tabla :visible="mostrarTabla" />
+  <button v-if="visible" class="btn ocultar btn-outline-info" @click="ocultarTabla">Ocultar</button>
+  <Tabla :visible="visible" />
   </main>
 </template>
 

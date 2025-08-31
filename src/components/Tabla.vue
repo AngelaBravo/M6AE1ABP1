@@ -32,7 +32,6 @@
                 <td>{{ edad2[2] }}</td>
             </tr>
         </tbody>
-        <button v-if="visible" class="btn btn-outline-info">Ocultar</button>
     </table>
 </template>
 

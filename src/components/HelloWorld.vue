@@ -24,7 +24,6 @@ const props = defineProps({
     <h1 class="green">{{ msg }}</h1>
       <br>
   <p>Aquí va la <button @click="props.mostrarTabla" class="btn btn-link">Tabla</button> de tres personas</p>
-  <!-- <button v-if="visible" class="btn btn-outline-info" @click="props.ocultarTabla">Ocultar</button> -->
   </div>
 </template>
 
